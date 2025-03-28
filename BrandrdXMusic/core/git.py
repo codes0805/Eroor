@@ -32,7 +32,7 @@ def install_req(cmd: str) -> Tuple[str, str, int, int]:
 def git():
     REPO_LINK = config.UPSTREAM_REPO
     if config.GIT_TOKEN:
-        GIT_USERNAME = REPO_LINK.split("com/")[1].split("/")[0]
+        GIT_USERNAME = REPO_LINK.split("github.com/")[1].split("/")[0]
         TEMP_REPO = REPO_LINK.split(f"https://github.com/{GIT_USERNAME}/")[1]
         UPSTREAM_REPO = f"https://{GIT_USERNAME}:{config.GIT_TOKEN}@{TEMP_REPO}"
     else:
